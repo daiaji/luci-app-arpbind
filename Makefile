@@ -15,7 +15,7 @@ define Package/$(PKG_NAME)
 	SUBMENU:=3. Applications
 	PKGARCH:=all
 	TITLE:=luci for arpbind
-        DEPENDS:=+ip-full
+        DEPENDS:=+ip-tiny
 endef
 
 define Package/$(PKG_NAME)/description
