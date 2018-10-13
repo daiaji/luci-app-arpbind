@@ -26,7 +26,7 @@ clean_arp() {
 add_arp() {
 	[ -z "$1" ] || [ -z "$2" ] || [ -z "$3" ] && return
 	echo "Adding ARP:IP Addr:$1  MAC Addr:$2  Interface:$3"
-	arpnum=$(arp -a|grep -c "$1")
+	arpnum=$(grep -c "$1" /proc/net/arp)
 	if [ "$arpnum" -eq 0 ]; then
 		ip neigh add $1 lladdr $2 nud permanent dev $3
 	else
